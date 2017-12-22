@@ -21,7 +21,7 @@
   params)
 
 (def date-display-format
-  (f/formatter "MM/dd/yyyy"))
+  (f/formatter "M/d/yyyy"))
 
 (defn format-date
   "US date format"

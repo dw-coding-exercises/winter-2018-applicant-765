@@ -42,3 +42,11 @@ input:focus {
 button {
   margin-left: .5em;
 }
+
+.results, .election {
+  padding: 1em;
+}
+
+.election .date {
+  padding-right: 1em;
+}

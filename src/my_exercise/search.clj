@@ -1,7 +1,9 @@
 (ns my-exercise.search
   (:require [hiccup.page :refer [html5]]
             [my-exercise.ocd :as ocd]
-            [my-exercise.turbovote :as turbovote]))
+            [my-exercise.turbovote :as turbovote]
+            [clj-time.format :as f]
+            [clj-time.coerce :as coerce]))
 
 (defn header
   "TODO: move me to shared ns and update home.clj"
@@ -18,10 +20,19 @@
   [params]
   params)
 
+(def date-display-format
+  (f/formatter "MM/dd/yyyy"))
+
+(defn format-date
+  "US date format"
+  [d]
+  (f/unparse date-display-format
+             (coerce/from-date d)))
+
 (defn render-election
   [election]
   [:div.election
-   [:span.date (:date election)]
+   [:span.date (format-date (:date election))]
    [:span.description (:description election)]])
 
 (defn render-response

@@ -7,7 +7,8 @@
                  [compojure "1.6.0"]
                  [hiccup "1.0.5"]
                  [http-kit "2.2.0"]
-                 [http-kit.fake "0.2.2"]]
+                 [http-kit.fake "0.2.2"]
+                 [clj-time "0.14.2"]]
   :plugins [[lein-ring "0.12.1"]]
   :ring {:handler my-exercise.core/handler}
   :aliases {"submit" ["run" "-m" "my-exercise.submit"]})

@@ -18,7 +18,7 @@
 (defn extract-address
   "Perform translation between form and what OCD expects"
   [params]
-  params)
+  (assoc params :place (:city params)))
 
 (def date-display-format
   (f/formatter "M/d/yyyy"))
